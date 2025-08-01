@@ -3,6 +3,24 @@ public class Solution {
         // A ~ Z: 65 ~ 90
         // a ~ z: 97 ~ 122
         
-        // 1. (charAt() - 65 + n) % 25 + charAt()
+        StringBuilder sb = new StringBuilder();
+        int ascii = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                sb.append(' ');
+                continue;
+            }
+            
+            char ch = s.charAt(i);
+            if (Character.isUpperCase(ch))
+                ascii = (ch + n) > 90 ? ch + n - 26 : ch + n;
+            else
+                ascii = (ch + n) > 122 ? ch + n - 26 : ch + n;
+            
+            sb.append((char)ascii);
+        }
+        
+        return sb.toString();
     }
 }
