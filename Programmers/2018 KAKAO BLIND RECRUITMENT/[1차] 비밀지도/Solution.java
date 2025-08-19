@@ -7,6 +7,12 @@ public class Solution {
         for(int i = 0; i < n; i++) {
             String str = Integer.toBinaryString(arr1[i]);
             
+            StringBuilder sb = new StringBuilder();
+            
+            sb.append("0".repeat(n - str.length()));
+            sb.append(str);
+            str = sb.toString();
+            
             for(int j = 0; j < n; j++) {
                 value[i][j] = (str.charAt(j) == '1') ? 1 : 0;
             }
@@ -14,6 +20,12 @@ public class Solution {
         
         for(int i = 0; i < n; i++) {
             String str = Integer.toBinaryString(arr2[i]);
+            
+            StringBuilder sb = new StringBuilder();
+            
+            sb.append("0".repeat(n - str.length()));
+            sb.append(str);
+            str = sb.toString();
             
             for(int j = 0; j < n; j++) {
                 value[i][j] += (str.charAt(j) == '1') ? 1 : 0;
