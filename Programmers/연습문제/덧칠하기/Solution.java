@@ -1,5 +1,18 @@
 public class Solution {
     public int solution(int n, int m, int[] section) {
+        int roller = section[0];
+        int cnt = 1;
+        
+        for (int i = 1; i < section.length; i++) {
+            if(roller + m - 1 < section[i]) {
+                cnt++;
+                roller = section[i];
+            }
+        }
+        
+        return cnt;
+        
+        /* 이전 풀이 - 위와 과정은 동일하지만 불필요한 조건문과 반복문이 포함됨
         int painting = 0;
         int painted = 0;
         
@@ -25,5 +38,6 @@ public class Solution {
         }
         
         return painting;
+         */
     }
 }
