@@ -23,7 +23,7 @@ public class Solution {
     private boolean isPrime(int num) {
         
         // 2부터 자기 자신(num) 전까지 나누어 떨어지는 숫자가 있는지 확인
-        for (int i = 2; i < num; i++) {
+        for (int i = 2; i <= Math.sqrt(num); i++) {
             if (num % i == 0) {
                 return false;  // 나누어 떨어진다면 false 반환
             }
